@@ -9,6 +9,7 @@
         body{font-family: Arial, Helvetica, sans-serif;}
         .szoveg{color: rebeccapurple;}
         img{width: 250px;
+            height: 200px;
             margin-top: 50px;
             margin-bottom: 50px;}
         .container{text-align: center;}
@@ -20,12 +21,14 @@
             <h1 class="szoveg">Kő-Papír-Olló</h1>
             <h2 class="szoveg">Válassz!</h2>
             <div id="kepek">
-                <img src="./ko.png" alt="Kő" id="kep1" onclick="keret()">
-                <img src="./ollo.png" alt="Olló" id="kep2">
-                <img src="./Paper.png" alt="Papír" id="kep3">
+                <img src="./ko.png" alt="Kő" id="kep1" onclick="keret1()">
+                <img src="./ollo.png" alt="Olló" id="kep2" onclick="keret2()">
+                <img src="./Paper.png" alt="Papír" id="kep3"onclick="keret3()">
             </div>
             <h2 class="szoveg">Gép választása</h2>
+            <div id="ellendiv"></div>
             <h1 class="szoveg">Eredmény:</h1>
+            <h3 id="eredmeny"></h3>
             <h3 class="szoveg">Te pontod</h3>
             <h3 id="tepont"></h3>
             <h3 class="szoveg">Gép pontja</h3>
