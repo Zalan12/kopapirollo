@@ -5,12 +5,8 @@ let tepontszam=0;
 let kivalasztottkep;
 let geppontszam=0;
 let eredmeny=document.getElementById("eredmeny")
-
 let tepont=document.getElementById("tepont");
-tepont.innerHTML=tepontszam;
 let geppont=document.getElementById("geppont");
-geppont.innerHTML=geppontszam;
-
 let kep1=document.getElementById("kep1")
 let kep2=document.getElementById("kep2")
 let kep3=document.getElementById("kep3")
@@ -41,13 +37,9 @@ function random()
     }
 
 }
-function dontetlen()
-{
-    if(kivalasztottkep.src==ellenkep.src)
-    {
-        eredmeny.innerHTML="Döntetlen"
-    }
-}
+
+
+
 
 
 
@@ -55,8 +47,8 @@ function dontetlen()
 
 function keret1()
 {
-    kivalasztottkep=kep1.src;
     
+    kivalasztottkep=0;
     if(kattszam1%2==0)
     {
     kep1.style.border="solid 3px red";
@@ -76,14 +68,15 @@ function keret1()
     kattszam3=0
 
     random()
-    dontetlen()
+    eredmenyes()
+
     
 
 
 }
 function keret2()
 {
-    kivalasztottkep=kep2.src;
+    kivalasztottkep=1;
     
     if(kattszam2%2==0)
     {
@@ -101,13 +94,14 @@ function keret2()
     kattszam3=0
 
     random()
-    dontetlen()
+    eredmenyes()
+    
 
 }
 function keret3()
 {
     
-    kivalasztottkep=kep3.src;
+    kivalasztottkep=2;
     if(kattszam3%2==0)
     {
     kep3.style.border="solid 3px red";
@@ -124,8 +118,28 @@ function keret3()
     kattszam2=0
 
     random()
-    dontetlen()
+    eredmenyes()
+    
 }
 
+function eredmenyes()
+{
+    if(kivalasztottkep==randomszam)
+    {
+        eredmeny.innerHTML="Döntetlen"
+    }
+    else if(kivalasztottkep==0&&randomszam==1 ||kivalasztottkep==1&&randomszam==2 ||kivalasztottkep==2&&randomszam==0 )
+    {
+        eredmeny.innerHTML="Nyertél";
+        tepontszam++;
+        tepont.innerHTML=tepontszam;
+    }
+    else if(kivalasztottkep==0&&randomszam==2||kivalasztottkep==1&&randomszam==0||kivalasztottkep==2&&randomszam==1)
+    {
+        eredmeny.innerHTML="Veszítettél";
+        geppontszam++;
+        geppont.innerHTML=geppontszam;
+    }
+}
 
 
